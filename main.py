@@ -68,30 +68,20 @@ def aboutme_handler(message):
 💎 Always improving skills
 
 """)
-@bot.message_handler(func=lambda message: message.text == 'Contact')
+@bot.message_handler(func=lambda message: message.text == "Contact")
 def contact_handler(message):
-  
-    bot.send_message(message.chat.id,"""
-📞 Telefon raqam:
-📱 +998 99 5766 73 09
+    keyboard = types.InlineKeyboardMarkup()
+    btn1 = types.InlineKeyboardButton("Telegram", url="https://t.me/karimovkarimov_bot")
+    btn2 = types.InlineKeyboardButton("Linkedin", url="https://www.linkedin.com/in/islombek-karimov-b610a5408/")
+    btn3= types.InlineKeyboardButton("Phone", url="tel:+998995767309")
+    btn4= types.InlineKeyboardButton("Email", url="mailto:islombekkarimovvv246@gmail.com")
+    keyboard.add(btn1, btn2)
+    keyboard.add(btn3, btn4)
 
-📧 Email:
-✉️ islombekkarimovvv246@gmail.com
+    text = "Men bilan bog'lanish uchun pastdagi linklarga bosing"
 
+    bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
-━━━━━━━━━━━━━━━
-🤖 Telegram Bot Contact Info
-✨ Tez aloqa uchun yuqoridagi ma’lumotlardan foydalaning!""")
-    
-    keyboard=types.InlineKeyboardMarkup()
-    link1=types.InlineKeyboardButton("Telegram", url="https://t.me/karimovkarimov_bot")
-    link2=types.InlineKeyboardButton("E-mail", url="mailto:islombekkarimovvv246@gmail.com")
-    link3=types.InlineKeyboardButton("Phone", url="tel:+998995767309")
-    link4=types.InlineKeyboardButton("LinkedIn", url="https://www.linkedin.com/in/islombek-karimov-b610a5408/")
-    keyboard.add(link1, link2)
-    keyboard.add(link3, link4)
-    bot.send_message(message.chat.id, "Yuqoridagi ma'lumotlardan foydalanib tezda bog'lanishingiz mumkin!", reply_markup=keyboard)
-      
 @bot.message_handler(func=lambda message: message.text == 'Services')
 def services_handler(message):
     bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
