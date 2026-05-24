@@ -84,7 +84,7 @@ def contact_handler(message):
 ✨ Tez aloqa uchun yuqoridagi ma’lumotlardan foydalaning!""")
     
     keyboard=types.InlineKeyboardMarkup()
-    link1=types.InlineKeyboardButton("Telegram", url="https://t.me/@karimovkarimov_bot")
+    link1=types.InlineKeyboardButton("Telegram", url="https://t.me/karimovkarimov_bot")
     link2=types.InlineKeyboardButton("E-mail", url="mailto:islombekkarimovvv246@gmail.com")
     link3=types.InlineKeyboardButton("Phone", url="tel:+998995767309")
     link4=types.InlineKeyboardButton("LinkedIn", url="https://www.linkedin.com/in/islombek-karimov-b610a5408/")
