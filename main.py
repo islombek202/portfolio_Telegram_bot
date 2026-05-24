@@ -56,14 +56,14 @@ def send_welcome(message):
 def aboutme_handler(message):
     bot.send_message(message.chat.id,  """
 👨‍💻 Islombek
-
+➖➖➖➖➖➖➖➖➖
 🎂 25-April, 2009
 🏫 School: 32-maktab
-
+➖➖➖➖➖➖➖➖➖
 🚀 Python programmer
 🌐 Web developer
 🤖 Telegram bot creator
-
+➖➖➖➖➖➖➖➖➖
 ⚡ Tech lover
 💎 Always improving skills
 
