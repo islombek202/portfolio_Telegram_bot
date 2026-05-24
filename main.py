@@ -12,11 +12,11 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     keyboard=types.ReplyKeyboardMarkup()
-    btn1=types.KeyboardButton('About me')
-    btn2=types.KeyboardButton('Contact')
-    btn3=types.KeyboardButton('Services')
-    btn4=types.KeyboardButton('Portfolio')
-    keyboard.add(btn1, btn2,)
+    btn1=types.KeyboardButton('About me👨🏻‍💻')
+    btn2=types.KeyboardButton('Contact📞')
+    btn3=types.KeyboardButton('Services💼')
+    btn4=types.KeyboardButton('Portfolio🖼️')
+    keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
     text = """
 ✨ Salom 👋🏻
@@ -52,7 +52,7 @@ def send_welcome(message):
 #     elif message.text == 'Contact':
 #         bot.send_message(message.chat.id, "Telefon raqam: +998995767309\nEmail: islombekkarimov246@gmail.com")
 
-@bot.message_handler(func=lambda message: message.text == 'About me')
+@bot.message_handler(func=lambda message: message.text == 'About me👨🏻‍💻')
 def aboutme_handler(message):
     bot.send_message(message.chat.id,  """
 👨‍💻 Islombek
@@ -68,7 +68,7 @@ def aboutme_handler(message):
 💎 Always improving skills
 
 """)
-@bot.message_handler(func=lambda message: message.text == 'Contact')
+@bot.message_handler(func=lambda message: message.text == 'Contact📞')
 def contact_handler(message):
     keyboard = types.InlineKeyboardMarkup()
     btn1 = types.InlineKeyboardButton("Telegram", url="https://t.me/karimovkarimov_bot")
@@ -82,10 +82,10 @@ def contact_handler(message):
 
     bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
-@bot.message_handler(func=lambda message: message.text == 'Services')
+@bot.message_handler(func=lambda message: message.text == 'Services💼')
 def services_handler(message):
     bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
-@bot.message_handler(func=lambda message: message.text == 'Portfolio')
+@bot.message_handler(func=lambda message: message.text == 'Portfolio🖼️')
 def portfolio_handler(message): 
     bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
 bot.infinity_polling()
