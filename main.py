@@ -63,33 +63,37 @@ def aboutme_handler(message):
 """
     )
 
-@bot.message_handler(func=lambda message: message.text == 'Contact')
+@bot.message_handler(func=lambda message: message.text == "Contact")
 def contact_handler(message):
 
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
 
-    link1 = types.InlineKeyboardButton(
+    telegram_btn = types.InlineKeyboardButton(
         "📱 Telegram",
         url="https://t.me/karimovkarimov_bot"
     )
 
-    link2 = types.InlineKeyboardButton(
+    email_btn = types.InlineKeyboardButton(
         "📧 Email",
         url="mailto:islombekkarimovvv246@gmail.com"
     )
 
-    link3 = types.InlineKeyboardButton(
+    phone_btn = types.InlineKeyboardButton(
         "📞 Phone",
         url="tel:+998995767309"
     )
 
-    link4 = types.InlineKeyboardButton(
+    linkedin_btn = types.InlineKeyboardButton(
         "💼 LinkedIn",
         url="https://www.linkedin.com/in/islombek-karimov-b610a5408/"
     )
 
-    keyboard.add(link1, link2)
-    keyboard.add(link3, link4)
+    keyboard.add(
+        telegram_btn,
+        email_btn,
+        phone_btn,
+        linkedin_btn
+    )
 
     bot.send_message(
         message.chat.id,
