@@ -3,7 +3,7 @@ from telebot import types
 import os
 from dotenv import load_dotenv
 
-load_dotenv() 
+load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
 
@@ -11,27 +11,21 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    keyboard=types.ReplyKeyboardMarkup()
-    btn1=types.KeyboardButton('About me')
-    btn2=types.KeyboardButton('Contact')
-    btn3=types.KeyboardButton('Services')
-    btn4=types.KeyboardButton('Portfolio')
-    keyboard.add(btn1, btn2,)
+
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+    btn1 = types.KeyboardButton('About me')
+    btn2 = types.KeyboardButton('Contact')
+    btn3 = types.KeyboardButton('Services')
+    btn4 = types.KeyboardButton('Portfolio')
+
+    keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
-    text = """
-✨ Salom 👋🏻
 
-🤖 Botimizga xush kelibsiz!
+    bot.send_message(
+        message.chat.id,
 
-⚡ Siz uchun tezkor va qulay xizmat tayyor 🚀
-
-📝 Kerakli buyruq yoki matnni yuboring.
-
-💎 Smart • Fast • Easy
-
-🔥🌐⚡
 """
-    bot.send_message(message.chat.id,"""
 ✨ Salom 👋🏻
 
 🤖 Botimizga xush kelibsiz!
@@ -43,18 +37,18 @@ def send_welcome(message):
 💎 Smart • Fast • Easy
 
 🔥🌐⚡
-""",reply_markup=keyboard)
+""",
 
-# @bot.message_handler(func=lambda message: True)
-# def echo_all(message):
-#     if message.text == 'About me':
-#         bot.send_message(message.chat.id, "Men Islombek Karimov.\n men 2009-yil tug'ilganman")
-#     elif message.text == 'Contact':
-#         bot.send_message(message.chat.id, "Telefon raqam: +998995767309\nEmail: islombekkarimov246@gmail.com")
+        reply_markup=keyboard
+    )
 
 @bot.message_handler(func=lambda message: message.text == 'About me')
 def aboutme_handler(message):
-    bot.send_message(message.chat.id,  """
+
+    bot.send_message(
+        message.chat.id,
+
+"""
 👨‍💻 Islombek
 
 🎂 25-April, 2009
@@ -66,30 +60,31 @@ def aboutme_handler(message):
 
 ⚡ Tech lover
 💎 Always improving skills
+"""
+    )
 
-""")
 @bot.message_handler(func=lambda message: message.text == 'Contact')
 def contact_handler(message):
 
     keyboard = types.InlineKeyboardMarkup()
 
     link1 = types.InlineKeyboardButton(
-        "Telegram",
+        "📱 Telegram",
         url="https://t.me/karimovkarimov_bot"
     )
 
     link2 = types.InlineKeyboardButton(
-        "E-mail",
+        "📧 Email",
         url="mailto:islombekkarimovvv246@gmail.com"
     )
 
     link3 = types.InlineKeyboardButton(
-        "Phone",
+        "📞 Phone",
         url="tel:+998995767309"
     )
 
     link4 = types.InlineKeyboardButton(
-        "LinkedIn",
+        "💼 LinkedIn",
         url="https://www.linkedin.com/in/islombek-karimov-b610a5408/"
     )
 
@@ -98,24 +93,50 @@ def contact_handler(message):
 
     bot.send_message(
         message.chat.id,
-        """
-📞 Telefon raqam:
-📱 +998 99 576 73 09
 
-📧 Email:
-✉️ islombekkarimovvv246@gmail.com
+"""
+📞 Contact Center
 
-━━━━━━━━━━━━━━━
-🤖 Telegram Bot Contact Info
-✨ Tez aloqa uchun quyidagi tugmalardan foydalaning!
+✨ Men bilan bog‘lanish uchun
+quyidagi tugmalardan foydalaning 👇
 """,
+
         reply_markup=keyboard
     )
-      
+
 @bot.message_handler(func=lambda message: message.text == 'Services')
 def services_handler(message):
-    bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
+
+    bot.send_message(
+        message.chat.id,
+
+"""
+🛠 Services
+
+🌐 Website yaratish
+🤖 Telegram bot yaratish
+🎨 Web design
+⚡ Python dasturlash
+🚀 Frontend development
+"""
+    )
+
 @bot.message_handler(func=lambda message: message.text == 'Portfolio')
-def portfolio_handler(message): 
-    bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
+def portfolio_handler(message):
+
+    bot.send_message(
+        message.chat.id,
+
+"""
+💼 Portfolio
+
+🚀 Telegram Bots
+🌐 Modern Websites
+🎮 Mini Games
+⚡ Python Projects
+
+🔥 Yangi loyihalar tez orada qo‘shiladi!
+"""
+    )
+
 bot.infinity_polling()
