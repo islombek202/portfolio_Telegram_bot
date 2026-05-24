@@ -68,7 +68,7 @@ def aboutme_handler(message):
 💎 Always improving skills
 
 """)
-@bot.message_handler(func=lambda message: message.text == "Contact")
+@bot.message_handler(func=lambda message: message.text == 'Contact')
 def contact_handler(message):
     keyboard = types.InlineKeyboardMarkup()
     btn1 = types.InlineKeyboardButton("Telegram", url="https://t.me/karimovkarimov_bot")
