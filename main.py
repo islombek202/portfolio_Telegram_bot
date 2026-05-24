@@ -82,8 +82,6 @@ def contact_handler(message):
 ━━━━━━━━━━━━━━━
 🤖 Telegram Bot Contact Info
 ✨ Tez aloqa uchun yuqoridagi ma’lumotlardan foydalaning!""")
-@bot.message_handler(func=lambda message: message.text == 'Contact')
-def contact_handler(message):
     keyboard=types.InlineKeyboardMarkup()
     link1=types.InlineKeyboardButton("Telegram", url="https://t.me/@karimovkarimov_bot")
     link2=types.InlineKeyboardButton("E-mail", url="mailto:islombekkarimovvv246@gmail.com")
