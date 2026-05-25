@@ -71,16 +71,34 @@ def aboutme_handler(message):
 @bot.message_handler(func=lambda message: message.text == 'Contact')
 def contact_handler(message):
     keyboard = types.InlineKeyboardMarkup()
-    btn1 = types.InlineKeyboardButton("Telegram", url="https://t.me/karimovkarimov_bot")
-    btn2 = types.InlineKeyboardButton("Linkedin", url="https://www.linkedin.com/in/islombek-karimov-b610a5408/")
-    btn3= types.InlineKeyboardButton("Phone", url="tel:+998995767309")
-    btn4= types.InlineKeyboardButton("Email", url="mailto:islombekkarimovvv246@gmail.com")
-    keyboard.add(btn1, btn2)
-    keyboard.add(btn3, btn4)
 
-    text1 = "Men bilan bog'lanish uchun pastdagi linklarga bosing"
+    btn1 = types.InlineKeyboardButton(
+        "📱 Telegram",
+        url="https://t.me/karimovkarimov_bot"
+    )
 
-    bot.send_message(message.chat.id, text1, reply_markup=keyboard)
+    btn2 = types.InlineKeyboardButton(
+        "💼 LinkedIn",
+        url="https://www.linkedin.com/in/islombek-karimov-b610a5408/"
+    )
+
+    keyboard.add(btn1)
+    keyboard.add(btn2)
+
+    text1 = """
+📞 Contact information
+
+☎️ Phone: +998 99 576 73 09
+📧 Email: islombekkarimovvv246@gmail.com
+
+👇 Quyidagi linklar orqali bog‘laning
+"""
+
+    bot.send_message(
+        message.chat.id,
+        text1,
+        reply_markup=keyboard
+    )
 
 @bot.message_handler(func=lambda message: message.text == 'Services')
 def services_handler(message):
