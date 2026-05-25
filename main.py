@@ -78,9 +78,9 @@ def contact_handler(message):
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
 
-    text = "Men bilan bog'lanish uchun pastdagi linklarga bosing"
+    text1 = "Men bilan bog'lanish uchun pastdagi linklarga bosing"
 
-    bot.send_message(message.chat.id, text, reply_markup=keyboard)
+    bot.send_message(message.chat.id, text1, reply_markup=keyboard)
 
 @bot.message_handler(func=lambda message: message.text == 'Services')
 def services_handler(message):
