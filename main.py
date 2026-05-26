@@ -12,10 +12,10 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     keyboard=types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1=types.KeyboardButton('About me')
-    btn2=types.KeyboardButton('Contact')
-    btn3=types.KeyboardButton('Services')
-    btn4=types.KeyboardButton('Portfolio')
+    btn1=types.KeyboardButton('About me🙋')
+    btn2=types.KeyboardButton('Contact📞')
+    btn3=types.KeyboardButton('Services💼')
+    btn4=types.KeyboardButton('Portfolio🖼️')
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
     text = """
@@ -52,7 +52,7 @@ def send_welcome(message):
 #     elif message.text == 'Contact':
 #         bot.send_message(message.chat.id, "Telefon raqam: +998995767309\nEmail: islombekkarimov246@gmail.com")
 
-@bot.message_handler(func=lambda message: message.text == 'About me')
+@bot.message_handler(func=lambda message: message.text == 'About me🙋')
 def aboutme_handler(message):
     bot.send_message(message.chat.id,  """
 👨‍💻 Islombek
@@ -68,7 +68,7 @@ def aboutme_handler(message):
 💎 Always improving skills
 
 """)
-@bot.message_handler(func=lambda message: message.text == 'Contact')
+@bot.message_handler(func=lambda message: message.text == 'Contact📞')
 def contact_handler(message):
     keyboard = types.InlineKeyboardMarkup()
 
@@ -101,18 +101,18 @@ def contact_handler(message):
         reply_markup=keyboard
     )
 
-@bot.message_handler(func=lambda message: message.text == 'Services')
+@bot.message_handler(func=lambda message: message.text == 'Services💼')
 def services_handler(message):
-    btn1=types.InlineKeyboardButton("Dasturlash", url="https://t.me/karimovkarimov_bot")
-    btn2=types.InlineKeyboardButton("Veb-ishlanmalar", url="https://t.me/karimovkarimov_bot")
-    btn3=types.InlineKeyboardButton("Telegram botlar", url="https://t.me/karimovkarimov_bot")
-    btn4=types.InlineKeyboardButton("Konsultatsiya", url="https://t.me/karimovkarimov_bot")
+    btn1=types.InlineKeyboardButton("Dasturlash👨🏻‍💻", url="https://t.me/karimovkarimov_bot")
+    btn2=types.InlineKeyboardButton("Veb-ishlanmalar🌐", url="https://t.me/karimovkarimov_bot")
+    btn3=types.InlineKeyboardButton("Telegram botlar🤖", url="https://t.me/karimovkarimov_bot")
+    btn4=types.InlineKeyboardButton("Konsultatsiya💬", url="https://t.me/karimovkarimov_bot")
     keyboard=types.InlineKeyboardMarkup()
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
-    bot.send_message(message.chat.id, "Bizning xizmatlarimiz:\n1. Dasturlash\n2. Veb-ishlanmalar\n3. Telegram botlar\n4. Konsultatsiya",reply_markup=keyboard)
+    bot.send_message(message.chat.id, "Bizning xizmatlarimiz:\n1. Dasturlash👨🏻‍💻\n2. Veb-ishlanmalar🌐\n3. Telegram botlar🤖\n4. Konsultatsiya💬",reply_markup=keyboard)
 
-@bot.message_handler(func=lambda message: message.text == 'Portfolio')
+@bot.message_handler(func=lambda message: message.text == 'Portfolio🖼️')
 def portfolio_handler(message): 
     keyboard = types.InlineKeyboardMarkup()
     btn1=types.InlineKeyboardButton("Cyrllic_to_Latin/Latin_to_Cyrllic convertor💻", url="https://t.me/Cyrllic_to_Latin_convertor_bot")
