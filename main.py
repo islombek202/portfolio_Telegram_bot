@@ -81,9 +81,10 @@ def contact_handler(message):
         "💼 LinkedIn",
         url="https://www.linkedin.com/in/islombek-karimov-b610a5408/"
     )
-
-    keyboard.add(btn1)
-    keyboard.add(btn2)
+    btn3 = types.InlineKeyboardButton("📷 Instagram", url="https://www.instagram.com/islombek_karimov192/")
+    btn4 = types.InlineKeyboardButton("🐙 GitHub", url="https://github.com/islombek202")
+    keyboard.add(btn1, btn2)
+    keyboard.add(btn3, btn4)
 
     text1 = """
 📞 Contact information
