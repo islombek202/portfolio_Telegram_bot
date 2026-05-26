@@ -11,7 +11,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    keyboard=types.ReplyKeyboardMarkup()
+    keyboard=types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1=types.KeyboardButton('About me')
     btn2=types.KeyboardButton('Contact')
     btn3=types.KeyboardButton('Services')
