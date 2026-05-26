@@ -103,8 +103,24 @@ def contact_handler(message):
 
 @bot.message_handler(func=lambda message: message.text == 'Services')
 def services_handler(message):
-    bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
+    btn1=types.InlineKeyboardButton("Dasturlash", url="https://t.me/karimovkarimov_bot")
+    btn2=types.InlineKeyboardButton("Veb-ishlanmalar", url="https://t.me/karimovkarimov_bot")
+    btn3=types.InlineKeyboardButton("Telegram botlar", url="https://t.me/karimovkarimov_bot")
+    btn4=types.InlineKeyboardButton("Konsultatsiya", url="https://t.me/karimovkarimov_bot")
+    keyboard=types.InlineKeyboardMarkup()
+    keyboard.add(btn1, btn2)
+    keyboard.add(btn3, btn4)
+    bot.send_message(message.chat.id, "Bizning xizmatlarimiz:\n1. Dasturlash\n2. Veb-ishlanmalar\n3. Telegram botlar\n4. Konsultatsiya",reply_markup=keyboard)
+
 @bot.message_handler(func=lambda message: message.text == 'Portfolio')
 def portfolio_handler(message): 
-    bot.send_message(message.chat.id, "Bu qism tez orada qo'shiladi...")
+    keyboard = types.InlineKeyboardMarkup()
+    btn1=types.InlineKeyboardButton("Cyrllic_to_Latin/Latin_to_Cyrllic convertor💻", url="https://t.me/Cyrllic_to_Latin_convertor_bot")
+    btn2=types.InlineKeyboardButton("SHOP.uz-portfolio_web-site🛒", url="https://shop-uz-portfolio-web-site.vercel.app")
+    btn3=types.InlineKeyboardButton("Counter-hisoblagich🧮", url="https://counter-hisoblagich.vercel.app")
+    btn4=types.InlineKeyboardButton("Tic-Tac-Toe❌⭕", url="https://tic-tac-toe-kappa-two-24.vercel.app")
+    keyboard.add(btn1, btn2)
+    keyboard.add(btn3, btn4)
+    bot.send_message(message.chat.id, "Mening portfoliomdagi loyihalarimni ko'ring:", reply_markup=keyboard)
+
 bot.infinity_polling()
