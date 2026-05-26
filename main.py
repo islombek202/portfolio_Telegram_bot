@@ -121,6 +121,6 @@ def portfolio_handler(message):
     btn4=types.InlineKeyboardButton("Tic-Tac-Toe❌⭕", url="https://tic-tac-toe-kappa-two-24.vercel.app")
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
-    bot.send_message(message.chat.id, "Mening portfoliomdagi loyihalarimni ko'ring:", reply_markup=keyboard)
+    bot.send_message(message.chat.id, "Mening portfoliomdagi loyihalarimni ko'ring👇👇👇:", reply_markup=keyboard)
 
 bot.infinity_polling()
