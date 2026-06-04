@@ -115,7 +115,7 @@ def services_handler(message):
 @bot.message_handler(func=lambda message: message.text == 'Portfolio🖼️')
 def portfolio_handler(message): 
 
-    text = """# Loyihalarim
+    text3 = """# Loyihalarim
 
 1. **Cyrllic_to_Latin/Latin_to_Cyrllic convertor bot** 💻  
    [Telegram Bot](https://t.me)
@@ -132,6 +132,6 @@ def portfolio_handler(message):
 5. **iOS Calculator** 📱  
    [Vercel Website](https://vercel.app)"""
 
-    bot.send_message(message.chat.id, text,parse_mode="Markdown")
+    bot.send_message(message.chat.id, text3,parse_mode="Markdown")
 
 bot.infinity_polling()
