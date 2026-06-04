@@ -123,6 +123,23 @@ def portfolio_handler(message):
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
     keyboard.add(btn5)
-    bot.send_message(message.chat.id, "Mening portfoliomdagi loyihalarimni ko'ring👇👇👇:", reply_markup=keyboard)
+    text = """# Loyihalarim
+
+1. **Cyrllic_to_Latin/Latin_to_Cyrllic convertor bot** 💻  
+   [Telegram Bot](https://t.me)
+
+2. **SHOP.uz-portfolio_web-site** 🛒  
+   [Vercel Website](https://vercel.app)
+
+3. **Counter-hisoblagich** 🧮  
+   [Vercel Website](https://vercel.app)
+
+4. **Tic-Tac-Toe** ❌⭕  
+   [Vercel Website](https://vercel.app)
+
+5. **iOS Calculator** 📱  
+   [Vercel Website](https://vercel.app)"""
+
+    bot.send_message(message.chat.id, text, reply_markup=keyboard, parse_mode="Markdown")
 
 bot.infinity_polling()

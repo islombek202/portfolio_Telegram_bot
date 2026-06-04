@@ -1,0 +1,6 @@
+sarlavha "Loyihalarim"
+1.Cyrllic_to_Latin/Latin_to_Cyrllic convertor bot💻:https://t.me/Cyrllic_to_Latin_convertor_bot
+2.SHOP.uz-portfolio_web-site🛒:https://shop-uz-portfolio-web-site.vercel.app
+3.Counter-hisoblagich🧮:https://counter-hisoblagich.vercel.app
+4.Tic-Tac-Toe❌⭕:https://tic-tac-toe-kappa-two-24.vercel.app
+5.iOS Calculator📱:https://ios-calculator-example.vercel.app
