@@ -114,15 +114,7 @@ def services_handler(message):
 
 @bot.message_handler(func=lambda message: message.text == 'Portfolio🖼️')
 def portfolio_handler(message): 
-    keyboard = types.InlineKeyboardMarkup()
-    btn1=types.InlineKeyboardButton("Cyrllic_to_Latin/Latin_to_Cyrllic convertor💻", url="https://t.me/Cyrllic_to_Latin_convertor_bot")
-    btn2=types.InlineKeyboardButton("SHOP.uz-portfolio_web-site🛒", url="https://shop-uz-portfolio-web-site.vercel.app")
-    btn3=types.InlineKeyboardButton("Counter-hisoblagich🧮", url="https://counter-hisoblagich.vercel.app")
-    btn4=types.InlineKeyboardButton("Tic-Tac-Toe❌⭕", url="https://tic-tac-toe-kappa-two-24.vercel.app")
-    btn5=types.InlineKeyboardButton("iOS Calculator📱", url="https://ios-calculator-example.vercel.app")
-    keyboard.add(btn1, btn2)
-    keyboard.add(btn3, btn4)
-    keyboard.add(btn5)
+
     text = """# Loyihalarim
 
 1. **Cyrllic_to_Latin/Latin_to_Cyrllic convertor bot** 💻  
@@ -140,6 +132,6 @@ def portfolio_handler(message):
 5. **iOS Calculator** 📱  
    [Vercel Website](https://vercel.app)"""
 
-    bot.send_message(message.chat.id, text, reply_markup=keyboard, parse_mode="Markdown")
+    bot.send_message(message.chat.id, text,parse_mode="Markdown")
 
 bot.infinity_polling()
