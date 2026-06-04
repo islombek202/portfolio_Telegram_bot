@@ -114,24 +114,25 @@ def services_handler(message):
 
 @bot.message_handler(func=lambda message: message.text == 'Portfolio🖼️')
 def portfolio_handler(message): 
-
-    text3 = """## Loyihalarim
+    
+    text3 = """*Loyihalarim*
 
 1. **Cyrllic_to_Latin/Latin_to_Cyrllic convertor bot** 💻  
    [Telegram Bot](https://t.me)
 
 2. **SHOP.uz-portfolio_web-site** 🛒  
-   [Vercel Website](https://vercel.app)
+   [Vercel Website](https://shop-uz-portfolio-web-site.vercel.app)
 
 3. **Counter-hisoblagich** 🧮  
-   [Vercel Website](https://vercel.app)
+   [Vercel Website](https://counter-hisoblagich.vercel.app)
 
 4. **Tic-Tac-Toe** ❌⭕  
-   [Vercel Website](https://vercel.app)
+   [Vercel Website](https://tic-tac-toe-kappa-two-24.vercel.app)
 
 5. **iOS Calculator** 📱  
-   [Vercel Website](https://vercel.app)"""
+   [Vercel Website](https://ios-calculator-example.vercel.app)"""
 
-    bot.send_message(message.chat.id, text3,parse_mode="Markdown")
+    bot.send_message(message.chat.id, text3, parse_mode="Markdown")
+
 
 bot.infinity_polling()
